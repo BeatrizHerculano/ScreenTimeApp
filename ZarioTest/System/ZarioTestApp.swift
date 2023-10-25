@@ -12,7 +12,7 @@ import SwiftData
 struct ZarioTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
         .modelContainer(for: SelectedApplication.self)
     }

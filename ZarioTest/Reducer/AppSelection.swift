@@ -12,8 +12,7 @@ import SwiftData
 import FamilyControls
 import ManagedSettings
 
-class AppSelection: Reducer{
-    private var context: ModelContext?
+struct AppSelection: Reducer{
     let store =  ManagedStore()
     
     struct State: Equatable{
@@ -23,7 +22,7 @@ class AppSelection: Reducer{
     
     enum Action: BindableAction{
         case viewLoaded
-        case selectAppsButtonTapped(ModelContext)
+        case selectAppsButtonTapped
         case removeShieldButtonTapped
         case binding(BindingAction<State>)
     }
@@ -32,9 +31,8 @@ class AppSelection: Reducer{
         BindingReducer()
         Reduce { state, action in
             switch action{
-            case let .selectAppsButtonTapped(context):
+            case .selectAppsButtonTapped:
                 state.pickerIsPresented = true
-                self.context = context
                 return .none
                 
             case .removeShieldButtonTapped:
@@ -68,35 +66,33 @@ class AppSelection: Reducer{
     }
     
     func shieldSelectedApps(state: State){
-        let tokens = state.$activitySelection.wrappedValue.applicationTokens
-        guard let context = self.context else { return }
+        let apps = state.$activitySelection.wrappedValue.applications
         
-        let repo = SelectedApplicationRepository(context: context)
+        let repo = SelectedApplicationRepository()
         
         repo.removeAllData()
         
-        for token in tokens {
-            repo.add(app: .init(aplicationToken: token))
+        for app in apps {
+            if let token = app.token, let name = app.localizedDisplayName{
+                repo.add(app: .init(aplication: token, name: name))
+            }
+            
         }
         
         print("there is \(repo.count()) registers")
         
-        
-//        store.shield(apps: tokens)
+        store.shield(apps: state.$activitySelection.wrappedValue.applicationTokens)
     }
     
     func removeShieldFromApps(){
         
         print("Removing all shields from apps")
-        
-//        guard let context = self.context else { return }
-        guard let contextTeste = try? ModelContext.init(ModelContainer(for: SelectedApplication.self)) else { return }
-        let repo = SelectedApplicationRepository(context: contextTeste)
+       
+        let repo = SelectedApplicationRepository()
         
         print("there is \(repo.count()) registers before delete")
         
         repo.removeAllData()
-        
         store.removeShield()
         
         print("there is \(repo.count()) registers")

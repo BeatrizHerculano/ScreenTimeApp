@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D096CBF32AE6F7F700E09D12 /* ZarioTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CBF22AE6F7F700E09D12 /* ZarioTestApp.swift */; };
-		D096CBF52AE6F7F700E09D12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CBF42AE6F7F700E09D12 /* ContentView.swift */; };
+		D096CBF52AE6F7F700E09D12 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CBF42AE6F7F700E09D12 /* MainView.swift */; };
 		D096CBF72AE6F7F900E09D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D096CBF62AE6F7F900E09D12 /* Assets.xcassets */; };
 		D096CBFA2AE6F7F900E09D12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D096CBF92AE6F7F900E09D12 /* Preview Assets.xcassets */; };
 		D096CC042AE6F7FA00E09D12 /* ZarioTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC032AE6F7FA00E09D12 /* ZarioTestTests.swift */; };
@@ -22,6 +22,11 @@
 		D096CC332AE8793100E09D12 /* SelectedApplicationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC322AE8793100E09D12 /* SelectedApplicationRepository.swift */; };
 		D096CC352AE88C1200E09D12 /* RemoveShield.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC342AE88C1200E09D12 /* RemoveShield.swift */; };
 		D096CC372AE88F7600E09D12 /* ShieldUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC362AE88F7600E09D12 /* ShieldUIConfiguration.swift */; };
+		D096CC3B2AE8BF6000E09D12 /* AppUsageInfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC3A2AE8BF6000E09D12 /* AppUsageInfoButton.swift */; };
+		D096CC3D2AE8C6A500E09D12 /* AppUsageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC3C2AE8C6A500E09D12 /* AppUsageInfo.swift */; };
+		D096CC3F2AE8C9A200E09D12 /* AppUsageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC3E2AE8C9A200E09D12 /* AppUsageList.swift */; };
+		D096CC412AE8E43200E09D12 /* AppActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC402AE8E43200E09D12 /* AppActivityMonitor.swift */; };
+		D096CC432AE8E51100E09D12 /* ShieldActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096CC422AE8E51100E09D12 /* ShieldActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +49,7 @@
 /* Begin PBXFileReference section */
 		D096CBEF2AE6F7F700E09D12 /* ZarioTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZarioTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D096CBF22AE6F7F700E09D12 /* ZarioTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZarioTestApp.swift; sourceTree = "<group>"; };
-		D096CBF42AE6F7F700E09D12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D096CBF42AE6F7F700E09D12 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D096CBF62AE6F7F900E09D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D096CBF92AE6F7F900E09D12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D096CBFF2AE6F7FA00E09D12 /* ZarioTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZarioTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +65,11 @@
 		D096CC322AE8793100E09D12 /* SelectedApplicationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedApplicationRepository.swift; sourceTree = "<group>"; };
 		D096CC342AE88C1200E09D12 /* RemoveShield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveShield.swift; sourceTree = "<group>"; };
 		D096CC362AE88F7600E09D12 /* ShieldUIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldUIConfiguration.swift; sourceTree = "<group>"; };
+		D096CC3A2AE8BF6000E09D12 /* AppUsageInfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUsageInfoButton.swift; sourceTree = "<group>"; };
+		D096CC3C2AE8C6A500E09D12 /* AppUsageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUsageInfo.swift; sourceTree = "<group>"; };
+		D096CC3E2AE8C9A200E09D12 /* AppUsageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUsageList.swift; sourceTree = "<group>"; };
+		D096CC402AE8E43200E09D12 /* AppActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActivityMonitor.swift; sourceTree = "<group>"; };
+		D096CC422AE8E51100E09D12 /* ShieldActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				D096CC202AE8278300E09D12 /* Components */,
-				D096CBF42AE6F7F700E09D12 /* ContentView.swift */,
+				D096CBF42AE6F7F700E09D12 /* MainView.swift */,
 				D096CC362AE88F7600E09D12 /* ShieldUIConfiguration.swift */,
+				D096CC3E2AE8C9A200E09D12 /* AppUsageList.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -163,6 +174,8 @@
 			children = (
 				D096CBF22AE6F7F700E09D12 /* ZarioTestApp.swift */,
 				D096CC2C2AE8751300E09D12 /* MyManagedStore.swift */,
+				D096CC402AE8E43200E09D12 /* AppActivityMonitor.swift */,
+				D096CC422AE8E51100E09D12 /* ShieldActions.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -180,6 +193,7 @@
 			children = (
 				D096CC232AE827BB00E09D12 /* AppSelectionView.swift */,
 				D096CC342AE88C1200E09D12 /* RemoveShield.swift */,
+				D096CC3A2AE8BF6000E09D12 /* AppUsageInfoButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				D096CC262AE8290A00E09D12 /* AppSelection.swift */,
+				D096CC3C2AE8C6A500E09D12 /* AppUsageInfo.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -346,12 +361,17 @@
 			files = (
 				D096CC302AE8767100E09D12 /* SelectedApplication.swift in Sources */,
 				D096CC2D2AE8751300E09D12 /* MyManagedStore.swift in Sources */,
-				D096CBF52AE6F7F700E09D12 /* ContentView.swift in Sources */,
+				D096CBF52AE6F7F700E09D12 /* MainView.swift in Sources */,
+				D096CC3F2AE8C9A200E09D12 /* AppUsageList.swift in Sources */,
 				D096CC272AE8290A00E09D12 /* AppSelection.swift in Sources */,
+				D096CC412AE8E43200E09D12 /* AppActivityMonitor.swift in Sources */,
 				D096CC372AE88F7600E09D12 /* ShieldUIConfiguration.swift in Sources */,
 				D096CC352AE88C1200E09D12 /* RemoveShield.swift in Sources */,
+				D096CC432AE8E51100E09D12 /* ShieldActions.swift in Sources */,
 				D096CC332AE8793100E09D12 /* SelectedApplicationRepository.swift in Sources */,
+				D096CC3D2AE8C6A500E09D12 /* AppUsageInfo.swift in Sources */,
 				D096CC242AE827BB00E09D12 /* AppSelectionView.swift in Sources */,
+				D096CC3B2AE8BF6000E09D12 /* AppUsageInfoButton.swift in Sources */,
 				D096CBF32AE6F7F700E09D12 /* ZarioTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

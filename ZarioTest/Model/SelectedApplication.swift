@@ -11,11 +11,13 @@ import SwiftData
 
 @Model
 class SelectedApplication {
-    var aplicationToken: ApplicationToken
+    var aplication: ApplicationToken?
+    var name: String?
     var timesOpened: Int
     
-    init(aplicationToken: ApplicationToken, timesOpened: Int = 0) {
-        self.aplicationToken = aplicationToken
+    init(aplication: ApplicationToken?, name: String?, timesOpened: Int = 0) {
+        self.aplication = aplication
+        self.name = name
         self.timesOpened = timesOpened
     }
 }

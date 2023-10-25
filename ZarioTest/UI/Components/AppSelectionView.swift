@@ -8,9 +8,6 @@
 import SwiftUI
 import ComposableArchitecture
 import FamilyControls
-import DeviceActivity
-import ManagedSettings
-import ManagedSettingsUI
 
 
 struct AppSelectionView: View {
@@ -22,7 +19,7 @@ struct AppSelectionView: View {
         store.send(.viewLoaded)
         return WithViewStore(self.store, observe: { $0 }) { viewStore in
             Button {
-                viewStore.send(.selectAppsButtonTapped(context))
+                viewStore.send(.selectAppsButtonTapped)
             } label: {
                 Text("Select Apps")
                     .bold()
@@ -40,7 +37,6 @@ struct AppSelectionView: View {
     }
     
 }
-
 
 //class ScreenTimeSelectAppsModel: ObservableObject {
 //    let store = ManagedSettingsStore()

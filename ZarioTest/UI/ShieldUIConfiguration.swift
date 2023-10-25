@@ -15,25 +15,18 @@ import SwiftData
 class ShieldDataUI: ShieldConfigurationDataSource {
     override func configuration(shielding application: Application) -> ShieldConfiguration {
         
-        print("app \(application) was open")
-        
-        // reducer for this
-//        if let context = try? ModelContext.init(ModelContainer(for: SelectedApplication.self)), let token = application.token {
-//            let repo = SelectedApplicationRepository(context: context)
-//            print("shield appeared, number of shielded apps:\(repo.count())")
-//            var registeredApp = repo.fetch(token: token)
-//            registeredApp?.timesOpened += 1
-//            do{
-//                try context.save()
-//            } catch {
-//                print(error)
-//            }
-//            
-//        }
-        // count how many times the app was open
+        if let token = application.token {
+            let repo = SelectedApplicationRepository()
+            print("shield appeared, number of shielded apps:\(repo.count())")
+            if let registeredApp = repo.fetch(token: token){
+                repo.incrementTimesOpenes(app: registeredApp)
+            }
+        }
        
-        
-        
-        return .init(backgroundColor: .red)
+        return .init(
+            primaryButtonLabel: .init(text: "Close app", color: .white),
+            primaryButtonBackgroundColor: .systemIndigo,
+            secondaryButtonLabel: .init(text: "Open App", color: .systemIndigo)
+        )
     }
 }

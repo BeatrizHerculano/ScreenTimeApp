@@ -11,33 +11,32 @@ import SwiftData
 import ManagedSettings
 
 class SelectedApplicationRepository{
-    var context: ModelContext
-    
-    init(context: ModelContext) {
+    var context: ModelContext?
+    let type = SelectedApplication.self
+    init() {
+         let context = try? ModelContext.init(ModelContainer(for: type))
         self.context = context
     }
     
-    
     func add(app: SelectedApplication){
-        context.insert(app)
+        context?.insert(app)
     }
     
     func remove(token: ApplicationToken){
-        try? context.delete(
+        try? context?.delete(
             model: SelectedApplication.self,
             where:  #Predicate<SelectedApplication>{ registeredApp in
-                registeredApp.aplicationToken == token
+                registeredApp.aplication == token
             }
         )
     }
     
-    
     func removeAllData(){
-        try? context.delete(model: SelectedApplication.self)
+        try? context?.delete(model: SelectedApplication.self)
     }
     
     func count() -> Int{
-        guard let count = try? context.fetchCount(.init(
+        guard let count = try? context?.fetchCount(.init(
             predicate: #Predicate<SelectedApplication>{ app in return true}
         )) else { return 0 }
         
@@ -45,11 +44,23 @@ class SelectedApplicationRepository{
     }
     
     func fetch(token: ApplicationToken) -> SelectedApplication?{
-        guard let object = try? context.fetch(.init(
-            predicate: #Predicate<SelectedApplication>{ app in app.aplicationToken == token}
+        guard let object = try? context?.fetch(.init(
+            predicate: #Predicate<SelectedApplication>{ app in app.aplication == token}
         )) else { return nil }
         
-        
         return object.first
+    }
+    
+    func fetchAll() -> [SelectedApplication]{
+        guard let objects = try? context?.fetch(.init(
+            predicate: #Predicate<SelectedApplication>{ app in true}
+        )) else { return [] }
+        
+        return objects
+    }
+    
+    func incrementTimesOpenes(app: SelectedApplication){
+        app.timesOpened += 1
+        try? context?.save()
     }
 }
